@@ -1,0 +1,4 @@
+/node_modules
+/dist
+/src/dummyData
+/src/initial.ts
