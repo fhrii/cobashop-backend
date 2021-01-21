@@ -50,6 +50,7 @@ import { User } from './entity';
         httpOnly: true,
         secure: APP_NODE_ENV === 'production' ? true : undefined,
         maxAge: APP_SESSION_MAX_AGE,
+        sameSite: 'none',
       },
     })
   );
