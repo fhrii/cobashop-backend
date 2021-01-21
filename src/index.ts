@@ -25,6 +25,8 @@ import { User } from './entity';
 
   const app = express();
 
+  app.set('trust proxy', 1);
+
   app.use(
     cors({
       origin: APP_CLIENT_URL,
