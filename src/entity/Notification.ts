@@ -5,11 +5,9 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToOne,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { User } from '.';
 
 @ObjectType()
 @Entity()
@@ -17,9 +15,6 @@ class Notification extends BaseEntity {
   @Field(() => ID)
   @PrimaryColumn()
   id: string;
-
-  @ManyToOne(() => User, (user) => user.notifications)
-  user: User;
 
   @IsString({ message: 'Name harus bertipe data string' })
   @IsNotEmpty({ message: 'Name tidak boleh kosong' })

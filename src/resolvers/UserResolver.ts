@@ -17,7 +17,7 @@ import {
   Resolver,
   Root,
 } from 'type-graphql';
-import { Notification, Transaction, User } from '../entity';
+import { Transaction, User } from '../entity';
 import { LogType, UserRole } from '../enum';
 import { IContext } from '../interfaces/context';
 import { APP_SESSION_NAME } from '../lib/config';
@@ -199,11 +199,6 @@ class UserResolver {
   @FieldResolver()
   async transactions(@Root() user: User): Promise<Transaction[]> {
     return Transaction.find({ where: { user } });
-  }
-
-  @FieldResolver()
-  async notifications(@Root() user: User): Promise<Notification[]> {
-    return Notification.find({ where: { user } });
   }
 }
 

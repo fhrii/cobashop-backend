@@ -16,7 +16,7 @@ import {
   OneToMany,
   PrimaryColumn,
 } from 'typeorm';
-import { Notification, Transaction } from '.';
+import { Transaction } from '.';
 import { UserRole } from '../enum';
 
 @ObjectType()
@@ -56,12 +56,6 @@ class User extends BaseEntity {
     cascade: true,
   })
   transactions: Transaction[];
-
-  @Field(() => [Notification])
-  @OneToMany(() => Notification, (notification) => notification.user, {
-    cascade: true,
-  })
-  notifications: Notification[];
 
   @Field(() => Int)
   @VersionColumn()
